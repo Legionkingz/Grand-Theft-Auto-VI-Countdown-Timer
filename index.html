@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto VI Countdown</title>
+
+    <!-- SEO and Social Sharing Meta Tags -->
+    <meta name="description" content="Fan-made countdown to the release of Grand Theft Auto VI. Get the latest news, view screenshots, and watch trailers for the most anticipated game of the decade.">
+    <meta name="keywords" content="GTA VI, Grand Theft Auto VI, GTA 6, Vice City, Rockstar Games, Countdown, Release Date, Trailer">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content=""> <!-- TODO: Replace with actual URL -->
+    <meta property="og:title" content="Grand Theft Auto VI Countdown">
+    <meta property="og:description" content="Fan-made countdown to the release of Grand Theft Auto VI. Get the latest news, view screenshots, and watch trailers.">
+    <meta property="og:image" content="GTAVI_Artwork_Wallpapers/vi.jpeg"> <!-- Note: This should be an absolute URL for social sharing -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content=""> <!-- TODO: Replace with actual URL -->
+    <meta property="twitter:title" content="Grand Theft Auto VI Countdown">
+    <meta property="twitter:description" content="Fan-made countdown to the release of Grand Theft Auto VI. Get the latest news, view screenshots, and watch trailers.">
+    <meta property="twitter:image" content="GTAVI_Artwork_Wallpapers/vi.jpeg"> <!-- Note: This should be an absolute URL for social sharing -->
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-black">
+
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">VI</div>
+    </div>
+
+    <div id="background-container" class="background-container"></div>
+    <div class="overlay"></div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <button class="nav-dot active" data-section="countdown" aria-label="Go to countdown section"></button>
+        <button class="nav-dot" data-section="gallery" aria-label="Go to gallery section"></button>
+        <button class="nav-dot" data-section="features" aria-label="Go to features section"></button>
+    </div>
+
+    <!-- Main Countdown Section -->
+    <section id="countdown" class="section flex flex-col items-center justify-center p-4">
+        <header class="text-center mb-6 md:mb-12">
+            <img src="GTAVI_Artwork_Wallpapers/vi.jpeg" alt="Grand Theft Auto VI Logo" class="w-48 sm:w-56 md:w-80 mx-auto mb-4 drop-shadow-pink-glow" fetchpriority="high">
+            <h2 class="text-lg sm:text-xl md:text-2xl font-bold tracking-widest text-gray-200 text-shadow-pink-glow-sm">COMING MAY 26, 2026</h2>
+        </header>
+
+        <main class="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 px-2">
+            <div class="timer-box">
+                <div id="days" class="timer-unit">000</div>
+                <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-box">
+                <div id="hours" class="timer-unit">00</div>
+                <div class="timer-label">Hours</div>
+            </div>
+            <div class="timer-box">
+                <div id="minutes" class="timer-unit">00</div>
+                <div class="timer-label">Minutes</div>
+            </div>
+            <div class="timer-box">
+                <div id="seconds" class="timer-unit">00</div>
+                <div class="timer-label">Seconds</div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-8 md:mt-16">
+            <div class="flex flex-wrap justify-center items-center gap-4">
+                <button id="trailerBtn1" class="trailer-btn font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-full transition duration-300 text-sm sm:text-base">
+                    Watch Trailer 1
+                </button>
+                <button id="trailerBtn2" class="trailer-btn font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-full transition duration-300 text-sm sm:text-base">
+                    Watch Trailer 2
+                </button>
+            </div>
+            <div class="mt-6 flex flex-wrap justify-center items-center gap-4" data-aos="fade-up">
+                <a id="shareTwitter" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center font-bold py-3 px-6 rounded-full transition duration-300 text-sm bg-gray-800 text-white hover:bg-gray-700">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                    <span class="ml-2">Share on X</span>
+                </a>
+                <a id="shareFacebook" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center font-bold py-3 px-6 rounded-full transition duration-300 text-sm bg-gray-800 text-white hover:bg-gray-700">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                    <span class="ml-2">Share on Facebook</span>
+                </a>
+            </div>
+
+            <!-- Social Follow Links -->
+            <div class="mt-8">
+                <p class="text-gray-400 mb-4" data-aos="fade-up" data-aos-delay="100">Follow for updates:</p>
+                <div class="flex flex-wrap justify-center items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://x.com/Legionkingz_" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center font-bold py-3 px-6 rounded-full transition duration-300 text-sm bg-gray-800 text-white hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                        <span class="ml-2">Follow on X</span>
+                    </a>
+                    <a href="https://legionkingz.itch.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center font-bold py-3 px-6 rounded-full transition duration-300 text-sm bg-gray-800 text-white hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" role="img" aria-label="Itch.io logo"><path d="M2.885 0h18.229C22.585 0 24 1.415 24 3.115v17.77C24 22.584 22.585 24 21.114 24H2.885C1.415 24 0 22.584 0 20.885V3.115C0 1.415 1.415 0 2.885 0zm17.43 12.011H8.887v3.428h11.428v-3.428zm0-5.715H8.887v3.428h11.428V6.296z"/></svg>
+                        <span class="ml-2">Follow on Itch.io</span>
+                    </a>
+                    <a href="https://www.instagram.com/legionkingz/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center font-bold py-3 px-6 rounded-full transition duration-300 text-sm bg-gray-800 text-white hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" role="img" aria-label="Instagram logo"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.122 1.465A4.902 4.902 0 0122.48 8.412c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808a6.528 6.528 0 01-.465 2.427 4.902 4.902 0 01-1.465 2.122 4.902 4.902 0 01-2.122 1.465c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06a6.528 6.528 0 01-2.427-.465 4.902 4.902 0 01-2.122-1.465A4.902 4.902 0 011.52 16.59c-.247-.636-.416-1.363-.465-2.427A48.627 48.627 0 011 12.315c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.465-2.122A4.902 4.902 0 015.41 1.52c.636-.247 1.363-.416 2.427-.465C8.88 1.013 9.234 1 11.665 1h.65zM12 6.023a5.977 5.977 0 100 11.954 5.977 5.977 0 000-11.954zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd"></path></svg>
+                        <span class="ml-2">Follow on Instagram</span>
+                    </a>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-6 sm:mt-8 px-4">This is an unofficial fan-made countdown. All trademarks are property of their respective owners.</p>
+        </footer>
+
+        <div class="scroll-indicator">
+            <div>↓</div>
+            <div>Scroll to explore</div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section content-section py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-center mb-4 text-shadow-pink-glow-md" data-aos="fade-down">
+                Screenshots & Videos
+            </h2>
+            <p class="text-gray-300 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 text-sm sm:text-base" data-aos="fade-down" data-aos-delay="100">
+                Explore the stunning visuals and character videos from the most anticipated game of the decade
+            </p>
+            
+            <div class="mb-6 sm:mb-8 text-center px-4" data-aos="fade-up" data-aos-delay="200">
+                <button id="filterAll" class="px-3 py-2 mx-1 sm:px-4 sm:mx-2 rounded-full bg-pink-600 text-white text-xs sm:text-sm">All</button>
+                <button id="filterPlaces" class="px-3 py-2 mx-1 sm:px-4 sm:mx-2 rounded-full bg-gray-700 text-white hover:bg-pink-600 transition text-xs sm:text-sm">Places</button>
+                <button id="filterPeople" class="px-3 py-2 mx-1 sm:px-4 sm:mx-2 rounded-full bg-gray-700 text-white hover:bg-pink-600 transition text-xs sm:text-sm">People</button>
+                <button id="filterVideos" class="px-3 py-2 mx-1 sm:px-4 sm:mx-2 rounded-full bg-gray-700 text-white hover:bg-pink-600 transition text-xs sm:text-sm">Videos</button>
+                <button id="filterArtwork" class="px-3 py-2 mx-1 sm:px-4 sm:mx-2 rounded-full bg-gray-700 text-white hover:bg-pink-600 transition text-xs sm:text-sm">Artwork</button>
+            </div>
+
+            <div id="galleryGrid" class="gallery-grid" data-aos="fade-up" data-aos-delay="300">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section content-section py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-center mb-8 sm:mb-16 text-shadow-pink-glow-md" data-aos="fade-down">
+                What to Expect
+            </h2>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" data-aos="fade-up">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl sm:text-4xl mb-4" role="img" aria-label="Palm Tree">🌴</div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-pink-400">Vice City Returns</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Return to the neon-soaked streets of Vice City in the most detailed open world ever created by Rockstar Games.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-3xl sm:text-4xl mb-4" role="img" aria-label="Two user silhouettes">👥</div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-pink-400">Dual Protagonists</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Play as Lucia and Jason in an epic crime saga spanning multiple decades and storylines.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl sm:text-4xl mb-4" role="img" aria-label="Game controller">🎮</div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-pink-400">Next-Gen Gameplay</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Experience revolutionary gameplay mechanics powered by the latest technology and years of development.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl sm:text-4xl mb-4" role="img" aria-label="Ocean wave">🌊</div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-pink-400">Dynamic Weather</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Immerse yourself in a living world with realistic weather systems and natural disasters.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-3xl sm:text-4xl mb-4" role="img" aria-label="Racing car">🏎️</div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-pink-400">Enhanced Vehicles</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Drive hundreds of meticulously detailed vehicles with improved physics and customization options.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl sm:text-4xl mb-4" role="img" aria-label="Musical note">🎵</div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-pink-400">Immersive Audio</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Enjoy a massive soundtrack featuring hundreds of licensed tracks across multiple radio stations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="content-section py-16 px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-shadow-pink-glow-lg" data-aos="fade-down">Stay Updated</h2>
+            <p class="text-gray-300 mb-8 max-w-lg mx-auto" data-aos="fade-down" data-aos-delay="100">Subscribe to our newsletter for the latest news, rumors, and release date information about Grand Theft Auto VI.</p>
+            <form id="newsletter-form" class="mt-8 max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required
+                        class="flex-1 px-4 py-3 bg-black/50 border-2 border-pink-500/50 rounded-full focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 text-white placeholder-gray-400 transition-all">
+                    <button type="submit" class="trailer-btn font-bold py-3 px-8 rounded-full transition duration-300 text-base">
+                        Subscribe
+                    </button>
+                </div>
+            </form>
+            <p id="newsletter-message" class="mt-4 text-green-400" style="display: none;"></p>
+        </div>
+    </section>
+
+    <!-- Leaks Section -->
+    <section id="leaks" class="section content-section py-16 px-4" style="display: none;">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-center mb-4 text-shadow-red-glow">
+                LEAKED FOOTAGE
+            </h2>
+            <p class="text-gray-300 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4 text-sm sm:text-base">
+                You weren't supposed to see this.
+            </p>
+            
+            <div id="leaksGrid" class="gallery-grid">
+                <!-- Leaked videos will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trailer Modal -->
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="video-container">
+                <!-- Video content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <span class="close" id="closeFullscreen" style="position: absolute; top: 2rem; right: 2rem; z-index: 201;">&times;</span>
+        <button id="fullscreenBtn" class="fullscreen-btn">⛶</button>
+        <div class="fullscreen-content">
+            <img id="fullscreenImage" src="" alt="GTA VI Image">
+        </div>
+        <button id="prevImage" class="fullscreen-nav prev">&#10094;</button>
+        <button id="nextImage" class="fullscreen-nav next">&#10095;</button>
+        <div id="imageCounter" class="fullscreen-counter"></div>
+    </div>
+    
+    <!-- Radio Player -->
+    <div id="radio-player" class="radio-player">
+        <div class="radio-player-content">
+            <div id="radio-display">
+                <div id="station-name">RADIO OFF</div>
+                <div id="song-info"></div>
+            </div>
+            <div class="radio-controls">
+                <button id="prev-station-btn" class="radio-btn">«</button>
+                <button id="play-pause-btn" class="radio-btn">▶</button>
+                <button id="next-station-btn" class="radio-btn">»</button>
+            </div>
+            <div class="volume-control">
+                <span>🔉</span>
+                <input type="range" id="volume-slider" min="0" max="100" value="50">
+            </div>
+        </div>
+    </div>
+
+    <script src="src/main.js" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="src/init.js" defer></script>
+    <script src="src/easter-egg.js" defer></script>
+    <script src="src/social.js" defer></script>
+    <script src="src/lazy-load.js" defer></script>
+</body>
+</html>
